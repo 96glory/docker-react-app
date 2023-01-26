@@ -17,7 +17,7 @@ RUN npm run build
 # 여기서는 웹 브라우저의 요청에 따라 정적 파일을 제공할 수 있게, Nginx에 파일을 제공한다.
 
 FROM nginx
-
+EXPOSE 80
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 
 # --from=builder : 가져올 파일의 출처, 즉 가져올 파일이 있는 스테이지를 명시
