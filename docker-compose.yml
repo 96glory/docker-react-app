@@ -6,9 +6,9 @@ services: # 컨테이너들에 대한 정의
       dockerfile: Dockerfile.dev # 도커 파일 지정
     ports: # 포트 매핑
       - "3000:3000" # 로컬 포트 : 컨테이너 포트
-    volumes:
-      - /usr/src/app/node_modules
-      - ./:/usr/src/app
+    # volumes:
+    #   - /usr/src/app/node_modules
+    #   - ./:/usr/src/app
     stdin_open: true
 
   # test 코드 수행을 위한 컨테이너 추가
