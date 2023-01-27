@@ -12,11 +12,11 @@ services: # 컨테이너들에 대한 정의
     stdin_open: true
 
   # test 코드 수행을 위한 컨테이너 추가
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /usr/src/app/node_modules
-      - ./:/usr/src/app
-    command: ["npm", "run", "test"]
+  # tests:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev
+  #   volumes:
+  #     - /usr/src/app/node_modules
+  #     - ./:/usr/src/app
+  #   command: ["npm", "run", "test"]
