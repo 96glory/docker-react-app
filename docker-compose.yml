@@ -1,22 +1,12 @@
-version: "3" # 도커 컴포즈의 버전
-services: # 컨테이너들에 대한 정의
-  react: # 컨테이너 이름
-    build: # 현 디렉토리에 있는 도커 파일 사용
-      context: . # 현재 도커 파일이 있는 위치
-      dockerfile: Dockerfile.dev # 도커 파일 지정
-    ports: # 포트 매핑
-      - "3000:3000" # 로컬 포트 : 컨테이너 포트
-    # volumes:
-    #   - /usr/src/app/node_modules
-    #   - ./:/usr/src/app
+version: "3"
+services:
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /usr/src/app/node_modules
+      - ./:/usr/src/app
     stdin_open: true
-
-  # test 코드 수행을 위한 컨테이너 추가
-  # tests:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.dev
-  #   volumes:
-  #     - /usr/src/app/node_modules
-  #     - ./:/usr/src/app
-  #   command: ["npm", "run", "test"]

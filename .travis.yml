@@ -6,11 +6,11 @@ services:
   - docker
 
 before_install:
-  - echo "START CREATING AN IMAGE WITH DOCKERFILE"
-  - docker build -t glory/docker-react-app -f Dockerfile.dev .
+  - echo "start creating an image with dockerfile"
+  - docker build -t docker-react-app_react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true glory/docker-react-app npm run test -- --coverage
+  - docker run -e CI=true docker-react-app_react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
